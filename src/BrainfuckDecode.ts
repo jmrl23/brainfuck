@@ -1,5 +1,5 @@
 export default class BrainfuckDecode {
-  private memory = new Uint32Array({ length: 1000 });
+  private readonly memory = new Uint8Array({ length: 1000 });
   private pointer = 0;
 
   constructor() {}
@@ -52,7 +52,7 @@ export default class BrainfuckDecode {
   }
 
   private reset(): void {
-    this.memory = new Uint32Array({ length: 1000 });
+    this.memory.fill(0, 0, this.memory.length);
     this.pointer = 0;
   }
 }
